@@ -61,14 +61,16 @@ export type PostCover = PostCoverFormat & {
 
 export type PostData = {
   id: PostID;
-  title: string;
-  content: string;
-  slug: string;
+  attributes: {
+    title: string;
+    content: string;
+    slug: string;
+    created_at: string;
+    updated_at: string;
+  };
   author: PostAuthor;
   category: PostCategory;
   created_by: PostCreatedBy;
   updated_by: PostCreatedBy;
-  created_at: string;
-  updated_at: string;
   cover: PostCover;
 };
