@@ -42,20 +42,24 @@ export type PostCoverFormat = {
 };
 
 export type PostCover = PostCoverFormat & {
-  id: PostID;
-  alternativeText: string;
-  caption: string;
-  previewUrl: null;
-  provider: string;
-  created_by: number;
-  updated_by: number;
-  created_at: string;
-  updated_at: string;
-  formats: {
-    thumbnail: PostCoverFormat;
-    small: PostCoverFormat;
-    medium: PostCoverFormat;
-    large: PostCoverFormat;
+  data: {
+    id: PostID;
+    attributes: {
+      alternativeText: string;
+      caption: string;
+      previewUrl: null;
+      provider: string;
+      created_by: number;
+      updated_by: number;
+      created_at: string;
+      updated_at: string;
+      formats: {
+        thumbnail: PostCoverFormat;
+        small: PostCoverFormat;
+        medium: PostCoverFormat;
+        large: PostCoverFormat;
+      };
+    };
   };
 };
 
@@ -67,10 +71,10 @@ export type PostData = {
     slug: string;
     created_at: string;
     updated_at: string;
+    author: PostAuthor;
+    category: PostCategory;
+    created_by: PostCreatedBy;
+    updated_by: PostCreatedBy;
+    cover: PostCover;
   };
-  author: PostAuthor;
-  category: PostCategory;
-  created_by: PostCreatedBy;
-  updated_by: PostCreatedBy;
-  cover: PostCover;
 };
