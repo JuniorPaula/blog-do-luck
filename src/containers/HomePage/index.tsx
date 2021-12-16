@@ -5,6 +5,7 @@ import { Header } from '../../components/Header';
 import { MainContainer } from '../../components/MainContainer';
 import { PostCard } from '../../components/PostCard';
 import { URL_API } from '../../config/app-config';
+import { Footer } from '../../components/Footer';
 
 export type HomePageProps = {
   posts: PostData[];
@@ -29,6 +30,7 @@ export default function HomePage({ posts }: HomePageProps) {
           ))}
         </Container>
       </MainContainer>
+      <Footer />
     </>
   );
 }
