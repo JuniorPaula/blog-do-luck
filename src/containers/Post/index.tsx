@@ -1,8 +1,8 @@
-import { marked } from 'marked';
 import { Footer } from '../../components/Footer';
 import { Heading } from '../../components/Headding';
 import { Header } from '../../components/Header';
 import { MainContainer } from '../../components/MainContainer';
+import { PostContainer } from '../../components/PostContainer';
 import { PostCover } from '../../components/PostCover';
 import { PostDetails } from '../../components/PostDetails';
 import { URL_API } from '../../config/app-config';
@@ -31,9 +31,7 @@ export const Post = ({ post }: PostProps) => {
           date={post.attributes.createdAt}
         />
 
-        <div
-          dangerouslySetInnerHTML={{ __html: marked(post.attributes.content) }}
-        ></div>
+        <PostContainer content={post.attributes.content} />
       </MainContainer>
 
       <Footer />
