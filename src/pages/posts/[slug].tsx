@@ -4,6 +4,8 @@ import { getAllPosts } from '../../data/posts/get-all-posts';
 import { getPosts } from '../../data/posts/get-posts';
 import { PostData } from '../../domain/posts/post';
 
+import { marked } from 'marked';
+
 export type DynamicPostProps = {
   post: PostData;
 };
@@ -12,7 +14,9 @@ const DynamicPost = ({ post }: DynamicPostProps) => {
   return (
     <>
       <p>{post.attributes.slug}</p>
-      <p>{post.attributes.content}</p>
+      <p
+        dangerouslySetInnerHTML={{ __html: marked(post.attributes.content) }}
+      ></p>
     </>
   );
 };
