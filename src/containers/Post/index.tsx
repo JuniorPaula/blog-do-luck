@@ -1,3 +1,4 @@
+import { Comments } from '../../components/Comments';
 import { Footer } from '../../components/Footer';
 import { Heading } from '../../components/Headding';
 import { Header } from '../../components/Header';
@@ -32,6 +33,8 @@ export const Post = ({ post }: PostProps) => {
         />
 
         <PostContainer content={post.attributes.content} />
+
+        <Comments title={post.attributes.title} slug={post.attributes.slug} />
       </MainContainer>
 
       <Footer />
